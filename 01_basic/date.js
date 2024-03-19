@@ -24,5 +24,4 @@ console.log(newDate.getMonth())
 
 newDate.toLocaleString('default',{
     hour:"2-digit",
-    dateStyle
 })
