@@ -25,3 +25,46 @@
  promisethree.then(function(user){
    console.log(user);
  })
+
+ const promisefour=new Promise(function(resolve,reject){
+   setTimeout(function(){
+      let error=true
+      if(!error){
+         resolve({username:"urvashi",password:"123"})
+      }
+      else{
+         reject('ERROR:something went wrong')
+      }
+   },1000)
+ })
+ promisefour.then((user) =>{
+   console.log(user);
+   return user.username;
+ }).then((user)=>{
+   console.log(user);
+ }).catch(function(error){
+   console.log(error);
+ }).finally(function(){
+   console.log("the promise is either resolved or rejected")
+ })
+
+ const promisefive=new Promise(function(resolve,reject){
+   setTimeout(function(){
+      let error=true
+      if(!error){
+         resolve({username:"urvashi",password:"123"})
+      }
+      else{
+         reject('ERROR:something e=wnet wrong')
+      }
+   },1000)
+ })
+ async function consumePromiseFive(){
+   try{
+      const response=await promisefive
+   console.log(response);
+   }
+   catch{
+      console.log(error);
+   }
+ }
